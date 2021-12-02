@@ -54,4 +54,23 @@ const doSomething = ():void  => {
     console.log("DoSomething");
 };
 
-let foo: null | undefined = null;
+let foo: void = undefined;
+
+// any
+
+let boo: any = "foo";
+console.log(boo.bar());
+
+// never 
+const doSom = (): never => {
+    throw "never";
+};
+
+// unknown
+
+let vAny: any = 10;
+let vUnknown: unknown = 10;
+
+let s1: string = vAny;
+// let s2: string = vUnknown; return error cause u cant assign 
+let s2: string = vUnknown as string;

@@ -43,4 +43,17 @@
 var doSomething = function () {
     console.log("DoSomething");
 };
-var foo = null;
+var foo = undefined;
+// any
+var boo = "foo";
+console.log(boo.bar());
+// never 
+var doSom = function () {
+    throw "never";
+};
+// unknown
+var vAny = 10;
+var vUnknown = 10;
+var s1 = vAny;
+// let s2: string = vUnknown; return error cause u cant assign 
+var s2 = vUnknown;

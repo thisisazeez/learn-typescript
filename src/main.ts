@@ -1,27 +1,57 @@
 
-// variable declaration
-let hello:string = "world";
+// // variable declaration
+// let hello:string = "world";
 
 
-// functions
-const getFullName = (name: string, surname: string) : string => {
-    return name + " " + surname;
+// // functions
+// const getFullName = (name: string, surname: string) : string => {
+//     return name + " " + surname;
+// };
+
+// console.log(getFullName("abdul", "azeez"));
+
+// // objects 
+// // intefaces
+// interface UserInterface{
+//     name: string;
+//     age?:number;
+//     getMessage(): string;
+// }
+// const user: UserInterface = {
+//     name: "Azeez",
+//     age:30,
+//     getMessage(){
+//         return "Hello" + name;
+//     }
+// };
+
+// const user2 : UserInterface = {
+//     name: "Jack",
+//     getMessage(){
+//         return "Welcome" + name;
+//     }
+// };
+
+// console.log(user.getMessage())
+
+
+// // union operator 
+// type ID = string;
+// type PopularTag = string;
+// type MaybePopularTag = PopularTag | null;
+// interface  User{
+//     id:ID;
+//     name:string;
+//     surname:string;
+// }
+// const popularTags: PopularTag[] = ['dragon', 'coffe'];
+// let username: string = "alex";
+// let pageName: string | number = "1";
+// let users: User | null = null;
+
+/// void
+const doSomething = ():void  => {
+    console.log("DoSomething");
 };
 
-console.log(getFullName("abdul", "azeez"));
-
-// objects 
-// intefaces
-interface User{
-    name: string;
-    age:number;
-}
-const user: User = {
-    name: "Azeez",
-    age:30
-};
-
-const user2 : User = {
-    name: "Jack",
-    age:12
-};
+let foo: null | undefined = null;

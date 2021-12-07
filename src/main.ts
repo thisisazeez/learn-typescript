@@ -74,3 +74,4 @@ let vUnknown: unknown = 10;
 let s1: string = vAny;
 // let s2: string = vUnknown; return error cause u cant assign 
 let s2: string = vUnknown as string;
+

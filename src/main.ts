@@ -50,28 +50,117 @@
 // let users: User | null = null;
 
 /// void
-const doSomething = ():void  => {
-    console.log("DoSomething");
+// const doSomething = ():void  => {
+//     console.log("DoSomething");
+// };
+
+// let foo: void = undefined;
+
+// // any
+
+// let boo: any = "foo";
+
+// // never 
+// const doSom = (): never => {
+//     throw "never";
+// };
+
+// // unknown
+
+// let vAny: any = 10;
+// let vUnknown: unknown = 10;
+
+// let s1: string = vAny;
+// // let s2: string = vUnknown; return error cause u cant assign 
+// let s2: string = vUnknown as string;
+
+// let pageNumber: string = "1";
+// let numericPageNumber: number = 1;
+
+// working with dom
+// let page:any = "1";
+// let pageNumber = page as string;
+
+
+// const someElement = document.querySelector(".foo");
+
+// someElement.addEventListener('blur', (event) => {
+//     const target = event.target as HTMLInputElement
+//     console.log('event', target.value)
+// })
+
+
+// classes in typescript
+
+interface UserInterface{
+    getFullname(): string
+}
+class User  implements UserInterface{
+    private firstName: string
+    private lastName: string
+    readonly unchangeableName: string
+    static readonly maxAge = 50
+     constructor(firstName: string, lastName: string){
+         this.firstName = firstName
+         this.lastName = lastName
+         this.unchangeableName = firstName
+     }
+
+     changeUnchangeableName(): void{
+        //  this.unchangeableName = "foo";
+        // gives error because ofthe readonly attribute
+     }
+    getFullname(): string {
+        return this.firstName + " " + this.lastName
+    }
+}
+const user = new User("azeez", "lesson")
+
+// console.log(user)
+
+// inheritance
+class Admin extends User{
+    private editor: string
+
+    setEditor(editor: string): void{
+        this.editor = editor
+    }
+    getEditor(): string{
+        return this.editor
+    }
+}
+
+
+// generics
+
+const addId = <T>(obj: T) => {
+    const id = Math.random().toString(16)
+    return {
+        ...obj,
+        id
+    }
 };
 
-let foo: void = undefined;
-
-// any
-
-let boo: any = "foo";
-console.log(boo.bar());
-
-// never 
-const doSom = (): never => {
-    throw "never";
+const Users =  {
+    name: "azeez",
 };
 
-// unknown
+const result = addId(user)
+// console.log(result, result)
 
-let vAny: any = 10;
-let vUnknown: unknown = 10;
 
-let s1: string = vAny;
-// let s2: string = vUnknown; return error cause u cant assign 
-let s2: string = vUnknown as string;
+// const statuses = {
+//     notStarted: 0,
+//     inProgress: 1,
+//     done: 2,
+// }
 
+// console.log(statuses.inProgress)
+
+enum Status {
+    NotStarted,
+    InProgress,
+    Done
+}
+
+console.log(Status.InProgress)

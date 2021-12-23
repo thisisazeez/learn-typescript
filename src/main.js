@@ -41,7 +41,7 @@ var User = /** @class */ (function () {
     return User;
 }());
 var user = new User("azeez", "lesson");
-console.log(user);
+// console.log(user)
 // inheritance
 var Admin = /** @class */ (function (_super) {
     __extends(Admin, _super);
@@ -65,4 +65,17 @@ var Users = {
     name: "azeez"
 };
 var result = addId(user);
-console.log(result, result);
+// console.log(result, result)
+// const statuses = {
+//     notStarted: 0,
+//     inProgress: 1,
+//     done: 2,
+// }
+// console.log(statuses.inProgress)
+var Status;
+(function (Status) {
+    Status[Status["NotStarted"] = 0] = "NotStarted";
+    Status[Status["InProgress"] = 1] = "InProgress";
+    Status[Status["Done"] = 2] = "Done";
+})(Status || (Status = {}));
+console.log(Status.InProgress);
